@@ -1,0 +1,108 @@
+Peran: Anda adalah seorang AI developer full-stack yang ahli dalam merancang aplikasi web yang berfokus pada pengalaman pengguna (UX) dan kesehatan mental.
+
+Tugas Utama:
+Rancang dan buatkan konsep detail untuk sebuah situs web interaktif bernama "Ruang Tenang" (atau nama sejenis). Tujuan utama situs web ini adalah menyediakan ruang digital yang aman, positif, dan suportif bagi pengguna untuk mendapatkan afirmasi positif, mengelola stres, dan menemukan jalur bantuan profesional jika diperlukan.
+
+Spesifikasi Detail Situs Web:
+
+1. Halaman Utama & Suasana (Homepage & Vibe):
+
+Desain: Minimalis, bersih, dan menenangkan. Gunakan banyak ruang putih.
+
+Palet Warna: Gunakan warna-warna lembut yang menenangkan seperti biru muda, hijau mint, krem, atau pastel. Hindari warna yang terlalu mencolok.
+
+Konten: Tampilkan sebuah kalimat sambutan yang hangat dan inspiratif di bagian tengah, contohnya: "Selamat datang di Ruang Tenang. Ambil napas, Anda tidak sendirian."
+
+Elemen: Harus ada dua tombol utama yang sangat jelas terlihat:
+
+Mulai Chat Positif (untuk memulai percakapan dengan AI).
+
+Butuh Bicara Sekarang? (untuk menghubungi pemilik/admin).
+
+2. Fitur Inti 1: Chatbot Afirmasi Positif
+
+Akses: Melalui tombol Mulai Chat Positif. Jendela chat akan muncul sebagai pop-up atau overlay di halaman yang sama.
+
+Kepribadian AI: AI Chatbot harus memiliki kepribadian yang ramah, empatik, dan suportif. Sapa pengguna dengan hangat.
+
+Fungsi:
+
+Ketika pengguna mengirim pesan apa pun, AI akan merespons dengan kalimat-kalimat afirmasi, kutipan inspiratif, atau pertanyaan reflektif yang positif.
+
+AI harus dilatih untuk tidak memberikan nasihat medis atau diagnosis, tetapi fokus pada dukungan emosional ringan. Contoh respons: "Terima kasih sudah berbagi. Ingat, kamu lebih kuat dari yang kamu kira," atau "Setiap langkah kecil adalah sebuah kemajuan. Aku bangga padamu."
+
+Tombol Akhiri Sesi: Di dalam jendela chat, harus ada tombol yang jelas untuk "Akhiri Sesi".
+
+3. Fitur Inti 2: Tombol Bantuan Darurat ("Butuh Bicara Sekarang?")
+
+Akses: Melalui tombol utama di halaman depan.
+
+Fungsi: Ketika tombol ini ditekan, akan muncul sebuah formulir kontak sederhana yang meminta:
+
+Nama (opsional)
+
+Email atau Nomor Telepon (untuk dihubungi kembali)
+
+Pesan Singkat (opsional, untuk memberikan konteks)
+
+Tindakan Backend: Setelah formulir dikirim, sistem harus secara otomatis mengirim notifikasi prioritas tinggi (email atau pesan instan) ke alamat email pemilik website yang sudah ditentukan, dengan subjek seperti "PERMINTAAN BANTUAN SEGERA".
+
+4. Alur Akhir Sesi Chat & Kuesioner Stres:
+
+Pemicu: Ketika pengguna menekan tombol "Akhiri Sesi" di jendela chatbot.
+
+Tampilan: Jendela chat menghilang, dan muncul sebuah halaman kuesioner singkat.
+
+Isi Kuesioner: Buatkan 5-7 pertanyaan sederhana untuk mengukur tingkat stres atau suasana hati pengguna saat itu. Gunakan skala Likert (1-5) atau pilihan ganda. Contoh pertanyaan:
+
+"Dalam skala 1 (Sangat Buruk) hingga 5 (Sangat Baik), bagaimana perasaan Anda saat ini?"
+
+"Seberapa sering Anda merasa cemas atau khawatir dalam beberapa jam terakhir? (1: Tidak Pernah, 5: Sangat Sering)"
+
+"Apakah Anda merasa memiliki energi untuk beraktivitas? (1: Sangat Tidak Berenergi, 5: Sangat Berenergi)"
+
+Penyimpanan Data: Jawaban dari kuesioner ini harus disimpan secara anonim (atau terhubung ke akun pengguna jika ada fitur login) ke dalam database.
+
+5. Kalkulasi & Visualisasi Tingkat Stres:
+
+Logika Backend: Buat sistem skoring sederhana berdasarkan jawaban kuesioner. Misalnya, skor total dari semua pertanyaan.
+
+Tampilan Hasil: Setelah kuesioner diisi, pengguna akan langsung melihat halaman hasil. Tampilkan tingkat stres mereka dengan cara yang mudah dipahami:
+
+Visual: Gunakan bar progres, speedometer, atau kode warna (misalnya: Hijau untuk Rendah, Kuning untuk Sedang, Merah untuk Tinggi).
+
+Teks: Berikan deskripsi singkat, contoh: "Tingkat Stres Anda: Sedang. Ingatlah untuk mengambil waktu istirahat sejenak hari ini."
+
+Riwayat: Pengguna dapat melihat riwayat tingkat stres mereka dari sesi-sesi sebelumnya dalam bentuk grafik sederhana.
+
+6. Opsi Rujukan Profesional:
+
+Pemicu: Jika hasil kalkulasi tingkat stres pengguna menunjukkan level "Tinggi" atau "Sangat Tinggi".
+
+Tawaran: Di bawah hasil tingkat stres, tampilkan sebuah pesan yang empatik dan tidak memaksa.
+
+Contoh: "Kami melihat bahwa Anda mungkin sedang melewati masa yang berat. Jika Anda merasa butuh bantuan lebih lanjut, kami bisa membantu Anda terhubung dengan profesional. Apakah Anda ingin melihat daftar sumber daya bantuan profesional?"
+
+Tindakan: Jika pengguna setuju (menekan tombol "Ya, Saya Mau"), arahkan mereka ke halaman statis yang berisi:
+
+Daftar kontak psikolog atau konselor terverifikasi.
+
+Nomor hotline darurat kesehatan mental.
+
+Link ke organisasi kesehatan mental terpercaya.
+
+Output yang Diharapkan dari Anda (AI):
+
+Struktur Proyek: Berikan saran struktur folder untuk proyek web ini (misalnya, folder untuk html, css, js, backend).
+
+Contoh Kode: Tuliskan contoh kode untuk fitur-fitur kunci:
+
+HTML/CSS untuk Halaman Utama dan jendela chat.
+
+JavaScript untuk fungsionalitas tombol, menampilkan/menyembunyikan chat, dan mengirim data kuesioner.
+
+Pseudocode atau contoh Python (Flask/Django) / Node.js (Express) untuk logika backend (menerima data kuesioner, menghitung skor, dan menyimpan ke database).
+
+Desain Skema Database: Buatkan desain skema database sederhana untuk menyimpan data pengguna (jika ada login), riwayat sesi chat, dan hasil kuesioner.
+
+Tolong buatkan rancangan ini selengkap dan sejelas mungkin agar dapat diimplementasikan menjadi sebuah aplikasi web yang fungsional.
