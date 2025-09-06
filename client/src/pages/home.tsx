@@ -82,10 +82,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <Leaf className="text-primary-foreground text-sm" size={16} />
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img src="/assets/images/logo_teras.png" alt="Logo Teras Cerita" className="h-full w-full object-contain" />
               </div>
-              <h1 className="text-xl font-semibold text-foreground">Ruang Tenang</h1>
+              <h1 className="text-xl font-semibold text-foreground">Teras Cerita</h1>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
               <button 
@@ -122,12 +122,13 @@ export default function Home() {
             <div className="breathing-animation mb-12">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Heart className="text-primary text-2xl" size={32} />
+                <img src="/assets/images/logo_teras.png" alt="Logo Teras Cerita" className="h-full w-full object-contain p-2" />
               </div>
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-light text-foreground mb-6 leading-tight">
               Selamat datang di <br />
-              <span className="font-semibold text-primary">Ruang Tenang</span>
+              <span className="font-semibold text-primary">Teras Cerita</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -165,7 +166,7 @@ export default function Home() {
                 Kami Hadir Untuk Anda
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ruang Tenang menyediakan dukungan emosional yang aman dan mudah diakses kapan saja Anda membutuhkannya.
+                Teras Cerita menyediakan dukungan emosional yang aman dan mudah diakses kapan saja Anda membutuhkannya.
               </p>
             </div>
 
@@ -339,7 +340,7 @@ export default function Home() {
                 Informasi Penting
               </h4>
               <p className="text-muted-foreground leading-relaxed">
-                Ruang Tenang adalah platform dukungan kesehatan mental yang tidak menggantikan konsultasi medis profesional. 
+                Teras Cerita adalah platform dukungan kesehatan mental yang tidak menggantikan konsultasi medis profesional. 
                 Jika Anda mengalami krisis atau pikiran untuk menyakiti diri sendiri, segera hubungi layanan darurat lokal atau 
                 nomor hotline crisis: <a href="tel:119" className="text-destructive font-medium">119</a>
               </p>
@@ -354,10 +355,11 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 flex items-center justify-center">
                   <Leaf className="text-primary-foreground text-sm" size={16} />
+                  <img src="/assets/images/logo_teras.png" alt="Logo Teras Cerita" className="h-full w-full object-contain" />
                 </div>
-                <h4 className="font-semibold text-foreground">Ruang Tenang</h4>
+                <h4 className="font-semibold text-foreground">Teras Cerita</h4>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Ruang digital yang aman untuk dukungan kesehatan mental dan ketenangan jiwa.
@@ -386,7 +388,7 @@ export default function Home() {
 
           <div className="border-t border-border mt-8 pt-6 text-center">
             <p className="text-muted-foreground text-sm">
-              © 2024 Ruang Tenang. Dibuat dengan ❤️ untuk kesehatan mental Indonesia.
+              © 2024 Teras Cerita. Dibuat dengan ❤️ untuk kesehatan mental Indonesia.
             </p>
           </div>
         </div>

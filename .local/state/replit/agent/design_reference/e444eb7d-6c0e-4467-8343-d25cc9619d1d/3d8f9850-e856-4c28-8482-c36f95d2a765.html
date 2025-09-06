@@ -1,0 +1,1201 @@
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruang Tenang - Dukungan Kesehatan Mental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    popover: {
+                        DEFAULT: "var(--popover)",
+                        foreground: "var(--popover-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                },
+                fontFamily: {
+                    sans: ["Inter", "system-ui", "sans-serif"],
+                }
+            },
+        }
+    };
+    </script>
+    <style>
+        :root {
+            --background: hsl(210 100% 98%);
+            --foreground: hsl(213 31% 23%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(213 31% 23%);
+            --popover: hsl(0 0% 100%);
+            --popover-foreground: hsl(213 31% 23%);
+            --primary: hsl(158 64% 52%);
+            --primary-foreground: hsl(0 0% 100%);
+            --secondary: hsl(210 40% 96%);
+            --secondary-foreground: hsl(213 31% 23%);
+            --muted: hsl(210 40% 96%);
+            --muted-foreground: hsl(213 19% 46%);
+            --accent: hsl(36 77% 96%);
+            --accent-foreground: hsl(213 31% 23%);
+            --destructive: hsl(0 84% 60%);
+            --destructive-foreground: hsl(0 0% 100%);
+            --border: hsl(214 32% 91%);
+            --input: hsl(214 32% 91%);
+            --ring: hsl(158 64% 52%);
+            --radius: 12px;
+        }
+        
+        .chat-animation {
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .breathing-animation {
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .stress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-background text-foreground font-sans">
+    <!-- @COMPONENT: Header Navigation -->
+    <header class="w-full bg-card/50 backdrop-blur-sm border-b border-border sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <i class="fas fa-leaf text-primary-foreground text-sm"></i>
+                    </div>
+                    <h1 class="text-xl font-semibold text-foreground">Ruang Tenang</h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#tentang" class="text-muted-foreground hover:text-foreground transition-colors">Tentang</a>
+                    <a href="#sumber-daya" class="text-muted-foreground hover:text-foreground transition-colors">Sumber Daya</a>
+                    <a href="#kontak" class="text-muted-foreground hover:text-foreground transition-colors">Kontak</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <main class="flex-1">
+        <section class="relative py-20 lg:py-32 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/30"></div>
+            <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="breathing-animation mb-12">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-primary text-2xl"></i>
+                    </div>
+                </div>
+                
+                <h1 class="text-4xl lg:text-6xl font-light text-foreground mb-6 leading-tight">
+                    Selamat datang di <br>
+                    <span class="font-semibold text-primary">Ruang Tenang</span>
+                </h1>
+                
+                <p class="text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Ambil napas dalam. Anda tidak sendirian. <br>
+                    Mari temukan ketenangan bersama dalam ruang yang aman ini.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+                    <button 
+                        id="startChatBtn" 
+                        class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                        data-event="click:openChat"
+                        data-implementation="Opens AI chat overlay for positive affirmations">
+                        <i class="fas fa-comments"></i>
+                        <span>Mulai Chat Positif</span>
+                    </button>
+                    
+                    <button 
+                        id="emergencyBtn"
+                        class="w-full sm:w-auto bg-destructive hover:bg-destructive/90 text-destructive-foreground font-medium py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                        data-event="click:openEmergencyForm"
+                        data-implementation="Opens emergency contact form modal">
+                        <i class="fas fa-phone"></i>
+                        <span>Butuh Bicara Sekarang?</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: Hero Section -->
+
+        <!-- @COMPONENT: Features Section -->
+        <section id="tentang" class="py-20 bg-muted/30">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+                        Kami Hadir Untuk Anda
+                    </h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Ruang Tenang menyediakan dukungan emosional yang aman dan mudah diakses kapan saja Anda membutuhkannya.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- @MAP: features.map(feature => ( -->
+                    <div class="bg-card rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-robot text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">AI Pendamping</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Dapatkan afirmasi positif dan dukungan emosional dari AI yang empatik dan suportif kapan saja.
+                        </p>
+                    </div>
+
+                    <div class="bg-card rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-accent/50 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">Pantau Stres</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Evaluasi tingkat stres Anda dengan kuesioner sederhana dan lihat perkembangan dari waktu ke waktu.
+                        </p>
+                    </div>
+
+                    <div class="bg-card rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-destructive/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-hands-helping text-destructive text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">Bantuan Profesional</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Akses langsung ke kontak darurat dan rujukan profesional kesehatan mental terpercaya.
+                        </p>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: Features Section -->
+    </main>
+
+    <!-- @COMPONENT: Chat Overlay -->
+    <div id="chatOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-card rounded-2xl shadow-2xl w-full max-w-md mx-auto chat-animation">
+                <!-- Chat Header -->
+                <div class="flex items-center justify-between p-6 border-b border-border">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-smile text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-card-foreground">AI Pendamping</h3>
+                            <p class="text-sm text-muted-foreground">Siap mendengarkan Anda</p>
+                        </div>
+                    </div>
+                    <button id="closeChatBtn" class="text-muted-foreground hover:text-foreground transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Chat Messages -->
+                <div id="chatMessages" class="h-80 overflow-y-auto p-6 space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-primary text-sm"></i>
+                        </div>
+                        <div class="bg-muted rounded-lg p-3 max-w-xs">
+                            <p class="text-muted-foreground text-sm">
+                                Halo! Selamat datang di Ruang Tenang. Saya di sini untuk mendengarkan dan memberikan dukungan. Bagaimana perasaan Anda hari ini?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="p-6 border-t border-border">
+                    <div class="flex space-x-3">
+                        <input 
+                            type="text" 
+                            id="chatInput"
+                            placeholder="Ketik pesan Anda di sini..."
+                            class="flex-1 bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                            data-bind="userMessage">
+                        <button 
+                            id="sendChatBtn"
+                            class="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-3 rounded-lg transition-colors"
+                            data-event="click:sendMessage"
+                            data-implementation="Send message to AI chatbot">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <p class="text-xs text-muted-foreground">AI ini tidak menggantikan konsultasi profesional</p>
+                        <button 
+                            id="endSessionBtn"
+                            class="text-sm text-muted-foreground hover:text-foreground underline transition-colors"
+                            data-event="click:endSession"
+                            data-implementation="End chat session and show stress questionnaire">
+                            Akhiri Sesi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Chat Overlay -->
+
+    <!-- @COMPONENT: Emergency Contact Modal -->
+    <div id="emergencyModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-card rounded-2xl shadow-2xl w-full max-w-lg mx-auto">
+                <div class="p-6 border-b border-border">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-destructive/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-destructive"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-card-foreground">Butuh Bicara Sekarang?</h3>
+                        </div>
+                        <button id="closeEmergencyBtn" class="text-muted-foreground hover:text-foreground transition-colors">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <form id="emergencyForm" class="p-6 space-y-6">
+                    <p class="text-muted-foreground">
+                        Tim kami akan segera menghubungi Anda. Mohon isi informasi di bawah ini.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label for="emergencyName" class="block text-sm font-medium text-card-foreground mb-2">
+                                Nama (Opsional)
+                            </label>
+                            <input 
+                                type="text" 
+                                id="emergencyName"
+                                class="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                                placeholder="Masukkan nama Anda"
+                                data-bind="emergency.name">
+                        </div>
+
+                        <div>
+                            <label for="emergencyContact" class="block text-sm font-medium text-card-foreground mb-2">
+                                Email atau Nomor Telepon *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="emergencyContact"
+                                required
+                                class="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                                placeholder="email@example.com atau 081234567890"
+                                data-bind="emergency.contact">
+                        </div>
+
+                        <div>
+                            <label for="emergencyMessage" class="block text-sm font-medium text-card-foreground mb-2">
+                                Pesan Singkat (Opsional)
+                            </label>
+                            <textarea 
+                                id="emergencyMessage"
+                                rows="3"
+                                class="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                                placeholder="Ceritakan apa yang bisa kami bantu..."
+                                data-bind="emergency.message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <button 
+                            type="button"
+                            id="cancelEmergencyBtn"
+                            class="flex-1 bg-secondary hover:bg-secondary/80 text-secondary-foreground font-medium py-3 px-6 rounded-lg transition-colors">
+                            Batal
+                        </button>
+                        <button 
+                            type="submit"
+                            class="flex-1 bg-destructive hover:bg-destructive/90 text-destructive-foreground font-medium py-3 px-6 rounded-lg transition-colors"
+                            data-event="submit:sendEmergencyRequest"
+                            data-implementation="Send high-priority notification to admin email">
+                            Kirim Permintaan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Emergency Contact Modal -->
+
+    <!-- @COMPONENT: Stress Assessment Modal -->
+    <div id="stressModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-card rounded-2xl shadow-2xl w-full max-w-2xl mx-auto max-h-[90vh] overflow-y-auto">
+                <div class="p-6 border-b border-border">
+                    <h3 class="text-xl font-semibold text-card-foreground">Evaluasi Tingkat Stres</h3>
+                    <p class="text-muted-foreground mt-2">
+                        Jawab pertanyaan berikut untuk membantu kami memahami kondisi Anda saat ini.
+                    </p>
+                </div>
+
+                <form id="stressAssessmentForm" class="p-6 space-y-8">
+                    <!-- @MAP: stressQuestions.map((question, index) => ( -->
+                    <div class="space-y-4">
+                        <h4 class="font-medium text-card-foreground">
+                            1. Dalam skala 1 (Sangat Buruk) hingga 5 (Sangat Baik), bagaimana perasaan Anda saat ini?
+                        </h4>
+                        <div class="flex justify-between items-center space-x-2">
+                            <span class="text-sm text-muted-foreground">Sangat Buruk</span>
+                            <div class="flex space-x-3">
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question1" value="1" class="text-primary focus:ring-ring" data-bind="assessment.q1">
+                                    <span class="text-sm text-muted-foreground">1</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question1" value="2" class="text-primary focus:ring-ring" data-bind="assessment.q1">
+                                    <span class="text-sm text-muted-foreground">2</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question1" value="3" class="text-primary focus:ring-ring" data-bind="assessment.q1">
+                                    <span class="text-sm text-muted-foreground">3</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question1" value="4" class="text-primary focus:ring-ring" data-bind="assessment.q1">
+                                    <span class="text-sm text-muted-foreground">4</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question1" value="5" class="text-primary focus:ring-ring" data-bind="assessment.q1">
+                                    <span class="text-sm text-muted-foreground">5</span>
+                                </label>
+                            </div>
+                            <span class="text-sm text-muted-foreground">Sangat Baik</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-medium text-card-foreground">
+                            2. Seberapa sering Anda merasa cemas atau khawatir dalam beberapa jam terakhir?
+                        </h4>
+                        <div class="flex justify-between items-center space-x-2">
+                            <span class="text-sm text-muted-foreground">Tidak Pernah</span>
+                            <div class="flex space-x-3">
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question2" value="1" class="text-primary focus:ring-ring" data-bind="assessment.q2">
+                                    <span class="text-sm text-muted-foreground">1</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question2" value="2" class="text-primary focus:ring-ring" data-bind="assessment.q2">
+                                    <span class="text-sm text-muted-foreground">2</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question2" value="3" class="text-primary focus:ring-ring" data-bind="assessment.q2">
+                                    <span class="text-sm text-muted-foreground">3</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question2" value="4" class="text-primary focus:ring-ring" data-bind="assessment.q2">
+                                    <span class="text-sm text-muted-foreground">4</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question2" value="5" class="text-primary focus:ring-ring" data-bind="assessment.q2">
+                                    <span class="text-sm text-muted-foreground">5</span>
+                                </label>
+                            </div>
+                            <span class="text-sm text-muted-foreground">Sangat Sering</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-medium text-card-foreground">
+                            3. Apakah Anda merasa memiliki energi untuk beraktivitas?
+                        </h4>
+                        <div class="flex justify-between items-center space-x-2">
+                            <span class="text-sm text-muted-foreground">Tidak Berenergi</span>
+                            <div class="flex space-x-3">
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question3" value="1" class="text-primary focus:ring-ring" data-bind="assessment.q3">
+                                    <span class="text-sm text-muted-foreground">1</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question3" value="2" class="text-primary focus:ring-ring" data-bind="assessment.q3">
+                                    <span class="text-sm text-muted-foreground">2</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question3" value="3" class="text-primary focus:ring-ring" data-bind="assessment.q3">
+                                    <span class="text-sm text-muted-foreground">3</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question3" value="4" class="text-primary focus:ring-ring" data-bind="assessment.q3">
+                                    <span class="text-sm text-muted-foreground">4</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question3" value="5" class="text-primary focus:ring-ring" data-bind="assessment.q3">
+                                    <span class="text-sm text-muted-foreground">5</span>
+                                </label>
+                            </div>
+                            <span class="text-sm text-muted-foreground">Sangat Berenergi</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-medium text-card-foreground">
+                            4. Seberapa sulit bagi Anda untuk berkonsentrasi hari ini?
+                        </h4>
+                        <div class="flex justify-between items-center space-x-2">
+                            <span class="text-sm text-muted-foreground">Sangat Mudah</span>
+                            <div class="flex space-x-3">
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question4" value="1" class="text-primary focus:ring-ring" data-bind="assessment.q4">
+                                    <span class="text-sm text-muted-foreground">1</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question4" value="2" class="text-primary focus:ring-ring" data-bind="assessment.q4">
+                                    <span class="text-sm text-muted-foreground">2</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question4" value="3" class="text-primary focus:ring-ring" data-bind="assessment.q4">
+                                    <span class="text-sm text-muted-foreground">3</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question4" value="4" class="text-primary focus:ring-ring" data-bind="assessment.q4">
+                                    <span class="text-sm text-muted-foreground">4</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question4" value="5" class="text-primary focus:ring-ring" data-bind="assessment.q4">
+                                    <span class="text-sm text-muted-foreground">5</span>
+                                </label>
+                            </div>
+                            <span class="text-sm text-muted-foreground">Sangat Sulit</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-medium text-card-foreground">
+                            5. Seberapa terbebani Anda dengan tanggung jawab saat ini?
+                        </h4>
+                        <div class="flex justify-between items-center space-x-2">
+                            <span class="text-sm text-muted-foreground">Tidak Terbebani</span>
+                            <div class="flex space-x-3">
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question5" value="1" class="text-primary focus:ring-ring" data-bind="assessment.q5">
+                                    <span class="text-sm text-muted-foreground">1</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question5" value="2" class="text-primary focus:ring-ring" data-bind="assessment.q5">
+                                    <span class="text-sm text-muted-foreground">2</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question5" value="3" class="text-primary focus:ring-ring" data-bind="assessment.q5">
+                                    <span class="text-sm text-muted-foreground">3</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question5" value="4" class="text-primary focus:ring-ring" data-bind="assessment.q5">
+                                    <span class="text-sm text-muted-foreground">4</span>
+                                </label>
+                                <label class="flex flex-col items-center space-y-1 cursor-pointer">
+                                    <input type="radio" name="question5" value="5" class="text-primary focus:ring-ring" data-bind="assessment.q5">
+                                    <span class="text-sm text-muted-foreground">5</span>
+                                </label>
+                            </div>
+                            <span class="text-sm text-muted-foreground">Sangat Terbebani</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button 
+                            type="submit"
+                            class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-6 rounded-lg transition-colors"
+                            data-event="submit:calculateStressLevel"
+                            data-implementation="Calculate stress score and show results">
+                            Lihat Hasil Evaluasi
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Stress Assessment Modal -->
+
+    <!-- @COMPONENT: Stress Results Modal -->
+    <div id="stressResultsModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-card rounded-2xl shadow-2xl w-full max-w-xl mx-auto">
+                <div class="p-6 border-b border-border">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-card-foreground">Hasil Evaluasi Stres</h3>
+                        <button id="closeResultsBtn" class="text-muted-foreground hover:text-foreground transition-colors">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <!-- Stress Level Indicator -->
+                    <div class="text-center space-y-4">
+                        <div class="relative w-32 h-32 mx-auto">
+                            <svg class="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(214 32% 91%)" stroke-width="8"/>
+                                <circle 
+                                    id="stressCircle"
+                                    cx="50" cy="50" r="40" 
+                                    fill="none" 
+                                    stroke="hsl(158 64% 52%)"
+                                    stroke-width="8"
+                                    stroke-dasharray="251.2"
+                                    stroke-dashoffset="125.6"
+                                    class="transition-all duration-1000 ease-out"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div id="stressScore" class="text-2xl font-bold text-foreground" data-bind="stressResults.score">65</div>
+                                    <div class="text-sm text-muted-foreground">dari 100</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div id="stressLevel" class="text-2xl font-semibold text-foreground mb-2" data-bind="stressResults.level">
+                                Tingkat Stres: Sedang
+                            </div>
+                            <p id="stressDescription" class="text-muted-foreground" data-bind="stressResults.description">
+                                Anda mungkin mengalami beberapa tekanan, tetapi masih dalam batas yang dapat dikelola. 
+                                Cobalah untuk mengambil waktu istirahat sejenak hari ini.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Historical Chart Placeholder -->
+                    <div class="bg-muted/50 rounded-lg p-6">
+                        <h4 class="font-medium text-card-foreground mb-4">Riwayat Tingkat Stres (7 Hari Terakhir)</h4>
+                        <div class="flex items-end justify-between h-32 space-x-2">
+                            <!-- @MAP: stressHistory.map(day => ( -->
+                            <div class="flex flex-col items-center space-y-2 flex-1">
+                                <div class="w-full bg-primary/20 rounded-t-sm relative" style="height: 60%;">
+                                    <div class="absolute bottom-0 w-full bg-primary rounded-t-sm stress-bar" style="height: 70%;"></div>
+                                </div>
+                                <span class="text-xs text-muted-foreground">Sen</span>
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 flex-1">
+                                <div class="w-full bg-primary/20 rounded-t-sm relative" style="height: 60%;">
+                                    <div class="absolute bottom-0 w-full bg-orange-400 rounded-t-sm stress-bar" style="height: 85%;"></div>
+                                </div>
+                                <span class="text-xs text-muted-foreground">Sel</span>
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 flex-1">
+                                <div class="w-full bg-primary/20 rounded-t-sm relative" style="height: 60%;">
+                                    <div class="absolute bottom-0 w-full bg-primary rounded-t-sm stress-bar" style="height: 45%;"></div>
+                                </div>
+                                <span class="text-xs text-muted-foreground">Rab</span>
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 flex-1">
+                                <div class="w-full bg-primary/20 rounded-t-sm relative" style="height: 60%;">
+                                    <div class="absolute bottom-0 w-full bg-orange-400 rounded-t-sm stress-bar" style="height: 75%;"></div>
+                                </div>
+                                <span class="text-xs text-muted-foreground">Kam</span>
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 flex-1">
+                                <div class="w-full bg-primary/20 rounded-t-sm relative" style="height: 60%;">
+                                    <div class="absolute bottom-0 w-full bg-primary rounded-t-sm stress-bar" style="height: 50%;"></div>
+                                </div>
+                                <span class="text-xs text-muted-foreground">Jum</span>
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 flex-1">
+                                <div class="w-full bg-primary/20 rounded-t-sm relative" style="height: 60%;">
+                                    <div class="absolute bottom-0 w-full bg-primary rounded-t-sm stress-bar" style="height: 40%;"></div>
+                                </div>
+                                <span class="text-xs text-muted-foreground">Sab</span>
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 flex-1">
+                                <div class="w-full bg-primary/20 rounded-t-sm relative" style="height: 60%;">
+                                    <div class="absolute bottom-0 w-full bg-orange-400 rounded-t-sm stress-bar" style="height: 65%;"></div>
+                                </div>
+                                <span class="text-xs text-muted-foreground font-medium">Hari Ini</span>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                        <div class="flex justify-between text-xs text-muted-foreground mt-2">
+                            <span>Rendah</span>
+                            <span>Sedang</span>
+                            <span>Tinggi</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Help Offer (shown when stress is high) -->
+                    <div id="professionalHelpOffer" class="hidden bg-accent rounded-lg p-6 border border-orange-200">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-heart text-orange-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-medium text-card-foreground mb-2">
+                                    Kami melihat Anda mungkin sedang melewati masa yang berat
+                                </h4>
+                                <p class="text-muted-foreground text-sm mb-4">
+                                    Jika Anda merasa butuh bantuan lebih lanjut, kami bisa membantu Anda terhubung dengan profesional. 
+                                    Apakah Anda ingin melihat daftar sumber daya bantuan profesional?
+                                </p>
+                                <div class="flex space-x-3">
+                                    <button 
+                                        id="showResourcesBtn"
+                                        class="bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors"
+                                        data-event="click:showProfessionalResources">
+                                        Ya, Saya Mau
+                                    </button>
+                                    <button 
+                                        id="notNowBtn"
+                                        class="bg-secondary hover:bg-secondary/80 text-secondary-foreground text-sm font-medium py-2 px-4 rounded-lg transition-colors">
+                                        Tidak Sekarang
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <button 
+                            type="button"
+                            id="backToHomeBtn"
+                            class="flex-1 bg-secondary hover:bg-secondary/80 text-secondary-foreground font-medium py-3 px-6 rounded-lg transition-colors">
+                            Kembali ke Beranda
+                        </button>
+                        <button 
+                            type="button"
+                            id="newChatBtn"
+                            class="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-6 rounded-lg transition-colors"
+                            data-event="click:startNewChat">
+                            Chat Lagi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Stress Results Modal -->
+
+    <!-- @COMPONENT: Professional Resources Modal -->
+    <div id="resourcesModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-card rounded-2xl shadow-2xl w-full max-w-2xl mx-auto max-h-[90vh] overflow-y-auto">
+                <div class="p-6 border-b border-border">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-card-foreground">Sumber Daya Bantuan Profesional</h3>
+                        <button id="closeResourcesBtn" class="text-muted-foreground hover:text-foreground transition-colors">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <!-- Emergency Hotlines -->
+                    <div class="bg-destructive/5 rounded-lg p-6 border border-destructive/20">
+                        <h4 class="font-semibold text-destructive mb-4 flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            Hotline Darurat
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-card-foreground">Crisis Helpline Indonesia</span>
+                                <a href="tel:119" class="text-destructive font-medium hover:underline">119</a>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-card-foreground">Yayasan Pulih</span>
+                                <a href="tel:+62-21-788-42580" class="text-destructive font-medium hover:underline">021-788-42580</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Contacts -->
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-card-foreground flex items-center">
+                            <i class="fas fa-user-md mr-2 text-primary"></i>
+                            Psikolog & Konselor Terverifikasi
+                        </h4>
+                        
+                        <!-- @MAP: professionalContacts.map(contact => ( -->
+                        <div class="bg-muted/30 rounded-lg p-4 hover:bg-muted/50 transition-colors" data-mock="true">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h5 class="font-medium text-card-foreground">Dr. Sarah Wijaya, M.Psi</h5>
+                                    <p class="text-muted-foreground text-sm">Spesialis Kecemasan & Depresi</p>
+                                    <p class="text-muted-foreground text-sm">📍 Jakarta Selatan</p>
+                                </div>
+                                <div class="text-right">
+                                    <a href="tel:+62-21-12345678" class="text-primary font-medium hover:underline text-sm">021-12345678</a>
+                                    <p class="text-muted-foreground text-xs">Online & Offline</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-muted/30 rounded-lg p-4 hover:bg-muted/50 transition-colors" data-mock="true">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h5 class="font-medium text-card-foreground">Ahmad Rahman, M.Psi</h5>
+                                    <p class="text-muted-foreground text-sm">Konselor Keluarga & Trauma</p>
+                                    <p class="text-muted-foreground text-sm">📍 Bandung</p>
+                                </div>
+                                <div class="text-right">
+                                    <a href="tel:+62-22-87654321" class="text-primary font-medium hover:underline text-sm">022-87654321</a>
+                                    <p class="text-muted-foreground text-xs">Konsultasi Online</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-muted/30 rounded-lg p-4 hover:bg-muted/50 transition-colors" data-mock="true">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h5 class="font-medium text-card-foreground">Dr. Maya Sari, Sp.KJ</h5>
+                                    <p class="text-muted-foreground text-sm">Psikiater & Terapi Kognitif</p>
+                                    <p class="text-muted-foreground text-sm">📍 Surabaya</p>
+                                </div>
+                                <div class="text-right">
+                                    <a href="tel:+62-31-11223344" class="text-primary font-medium hover:underline text-sm">031-11223344</a>
+                                    <p class="text-muted-foreground text-xs">Klinik & Telehealth</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- @END_MAP )) -->
+                    </div>
+
+                    <!-- Trusted Organizations -->
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-card-foreground flex items-center">
+                            <i class="fas fa-building mr-2 text-accent-foreground"></i>
+                            Organisasi Kesehatan Mental Terpercaya
+                        </h4>
+                        
+                        <div class="grid gap-3">
+                            <a href="#" class="bg-muted/30 rounded-lg p-4 hover:bg-muted/50 transition-colors block" data-mock="true">
+                                <h5 class="font-medium text-card-foreground">Yayasan Pulih</h5>
+                                <p class="text-muted-foreground text-sm">Trauma healing dan dukungan psikososial</p>
+                            </a>
+                            <a href="#" class="bg-muted/30 rounded-lg p-4 hover:bg-muted/50 transition-colors block" data-mock="true">
+                                <h5 class="font-medium text-card-foreground">Into The Light Indonesia</h5>
+                                <p class="text-muted-foreground text-sm">Pencegahan bunuh diri dan krisis mental</p>
+                            </a>
+                            <a href="#" class="bg-muted/30 rounded-lg p-4 hover:bg-muted/50 transition-colors block" data-mock="true">
+                                <h5 class="font-medium text-card-foreground">Himpunan Psikologi Indonesia</h5>
+                                <p class="text-muted-foreground text-sm">Direktori psikolog berlisensi</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button 
+                            id="backFromResourcesBtn"
+                            class="bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-6 rounded-lg transition-colors">
+                            Kembali ke Hasil
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Professional Resources Modal -->
+
+    <!-- @COMPONENT: Success Message Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-card rounded-2xl shadow-2xl w-full max-w-md mx-auto">
+                <div class="p-6 text-center space-y-4">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                        <i class="fas fa-check text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-card-foreground">Pesan Terkirim</h3>
+                    <p class="text-muted-foreground">
+                        Tim kami akan segera menghubungi Anda. Terima kasih telah mempercayai kami.
+                    </p>
+                    <button 
+                        id="closeSuccessBtn"
+                        class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-6 rounded-lg transition-colors">
+                        Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Success Message Modal -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-muted/30 border-t border-border py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-leaf text-primary-foreground text-sm"></i>
+                        </div>
+                        <h4 class="font-semibold text-foreground">Ruang Tenang</h4>
+                    </div>
+                    <p class="text-muted-foreground text-sm leading-relaxed">
+                        Ruang digital yang aman untuk dukungan kesehatan mental dan ketenangan jiwa.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="font-semibold text-foreground mb-4">Bantuan Cepat</h5>
+                    <div class="space-y-2 text-sm">
+                        <p class="text-muted-foreground">Crisis Helpline: <a href="tel:119" class="text-destructive font-medium">119</a></p>
+                        <p class="text-muted-foreground">WhatsApp Support: <a href="https://wa.me/6281234567890" class="text-primary font-medium">+62 812-3456-7890</a></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="font-semibold text-foreground mb-4">Penting untuk Diingat</h5>
+                    <p class="text-muted-foreground text-sm leading-relaxed">
+                        Layanan ini tidak menggantikan konsultasi medis profesional. Jika Anda mengalami krisis, segera hubungi layanan darurat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-border mt-8 pt-6 text-center">
+                <p class="text-muted-foreground text-sm">
+                    © 2024 Ruang Tenang. Dibuat dengan ❤️ untuk kesehatan mental Indonesia.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // @STATE: chatOpen:boolean = false
+        // @STATE: currentStressScore:number = 0
+        // @STATE: showingResults:boolean = false
+
+        (function() {
+            'use strict';
+
+            // DOM Elements
+            const chatOverlay = document.getElementById('chatOverlay');
+            const emergencyModal = document.getElementById('emergencyModal');
+            const stressModal = document.getElementById('stressModal');
+            const stressResultsModal = document.getElementById('stressResultsModal');
+            const resourcesModal = document.getElementById('resourcesModal');
+            const successModal = document.getElementById('successModal');
+            
+            const startChatBtn = document.getElementById('startChatBtn');
+            const emergencyBtn = document.getElementById('emergencyBtn');
+            const closeChatBtn = document.getElementById('closeChatBtn');
+            const endSessionBtn = document.getElementById('endSessionBtn');
+            const sendChatBtn = document.getElementById('sendChatBtn');
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+
+            // Positive affirmations responses
+            const affirmations = [
+                "Terima kasih sudah berbagi. Ingat, kamu lebih kuat dari yang kamu kira. 💪",
+                "Setiap langkah kecil adalah sebuah kemajuan. Aku bangga padamu. 🌱",
+                "Perasaan ini akan berlalu. Kamu memiliki kekuatan untuk melewati ini. 🌈",
+                "Tidak apa-apa untuk tidak baik-baik saja. Yang penting kamu berusaha. ❤️",
+                "Kamu sudah melakukan yang terbaik hari ini, dan itu sudah cukup. ⭐",
+                "Setiap hari adalah kesempatan baru untuk mulai lagi. Semangat! 🌅",
+                "Kamu berharga dan kehadiranmu di dunia ini berarti. 🌟"
+            ];
+
+            // Modal Management
+            function showModal(modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+                document.body.style.overflow = 'hidden';
+            }
+
+            function hideModal(modal) {
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+
+            // Chat Functionality
+            function addChatMessage(message, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'flex items-start space-x-3';
+                
+                if (isUser) {
+                    messageDiv.innerHTML = `
+                        <div class="flex-1 flex justify-end">
+                            <div class="bg-primary text-primary-foreground rounded-lg p-3 max-w-xs">
+                                <p class="text-sm">${message}</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    messageDiv.innerHTML = `
+                        <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-primary text-sm"></i>
+                        </div>
+                        <div class="bg-muted rounded-lg p-3 max-w-xs">
+                            <p class="text-muted-foreground text-sm">${message}</p>
+                        </div>
+                    `;
+                }
+                
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function sendChatMessage() {
+                const message = chatInput.value.trim();
+                if (!message) return;
+
+                // Add user message
+                addChatMessage(message, true);
+                chatInput.value = '';
+
+                // Simulate AI response delay
+                setTimeout(() => {
+                    const randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+                    addChatMessage(randomAffirmation);
+                }, 1000);
+            }
+
+            // Stress Assessment Calculation
+            function calculateStressScore() {
+                const form = document.getElementById('stressAssessmentForm');
+                const formData = new FormData(form);
+                let totalScore = 0;
+                let questionCount = 0;
+
+                // Calculate average score from all questions
+                for (let i = 1; i <= 5; i++) {
+                    const value = formData.get(`question${i}`);
+                    if (value) {
+                        totalScore += parseInt(value);
+                        questionCount++;
+                    }
+                }
+
+                if (questionCount === 0) return null;
+
+                const averageScore = totalScore / questionCount;
+                const stressScore = Math.round((averageScore - 1) * 25); // Convert to 0-100 scale
+
+                return {
+                    score: stressScore,
+                    level: getStressLevel(stressScore),
+                    description: getStressDescription(stressScore)
+                };
+            }
+
+            function getStressLevel(score) {
+                if (score <= 25) return 'Rendah';
+                if (score <= 50) return 'Sedang';
+                if (score <= 75) return 'Tinggi';
+                return 'Sangat Tinggi';
+            }
+
+            function getStressDescription(score) {
+                if (score <= 25) {
+                    return 'Tingkat stres Anda tergolong rendah. Pertahankan kondisi positif ini dengan terus menjaga keseimbangan hidup.';
+                } else if (score <= 50) {
+                    return 'Anda mungkin mengalami beberapa tekanan, tetapi masih dalam batas yang dapat dikelola. Cobalah untuk mengambil waktu istirahat sejenak hari ini.';
+                } else if (score <= 75) {
+                    return 'Tingkat stres Anda cukup tinggi. Pertimbangkan untuk berbicara dengan seseorang yang Anda percaya atau profesional.';
+                } else {
+                    return 'Anda mungkin mengalami stres yang signifikan. Sangat disarankan untuk mencari dukungan profesional.';
+                }
+            }
+
+            function displayStressResults(results) {
+                document.getElementById('stressScore').textContent = results.score;
+                document.getElementById('stressLevel').textContent = `Tingkat Stres: ${results.level}`;
+                document.getElementById('stressDescription').textContent = results.description;
+
+                // Update circular progress
+                const circle = document.getElementById('stressCircle');
+                const circumference = 2 * Math.PI * 40;
+                const offset = circumference - (results.score / 100) * circumference;
+                circle.style.strokeDashoffset = offset;
+
+                // Change color based on stress level
+                if (results.score <= 25) {
+                    circle.style.stroke = 'hsl(158 64% 52%)'; // Green
+                } else if (results.score <= 50) {
+                    circle.style.stroke = 'hsl(45 93% 47%)'; // Yellow
+                } else {
+                    circle.style.stroke = 'hsl(0 84% 60%)'; // Red
+                }
+
+                // Show professional help offer for high stress
+                const helpOffer = document.getElementById('professionalHelpOffer');
+                if (results.score > 50) {
+                    helpOffer.classList.remove('hidden');
+                } else {
+                    helpOffer.classList.add('hidden');
+                }
+            }
+
+            // Event Listeners
+            startChatBtn.addEventListener('click', () => {
+                showModal(chatOverlay);
+            });
+
+            emergencyBtn.addEventListener('click', () => {
+                showModal(emergencyModal);
+            });
+
+            closeChatBtn.addEventListener('click', () => {
+                hideModal(chatOverlay);
+            });
+
+            endSessionBtn.addEventListener('click', () => {
+                hideModal(chatOverlay);
+                setTimeout(() => showModal(stressModal), 300);
+            });
+
+            sendChatBtn.addEventListener('click', sendChatMessage);
+
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendChatMessage();
+                }
+            });
+
+            // Close modal buttons
+            document.getElementById('closeEmergencyBtn').addEventListener('click', () => {
+                hideModal(emergencyModal);
+            });
+
+            document.getElementById('closeResultsBtn').addEventListener('click', () => {
+                hideModal(stressResultsModal);
+            });
+
+            document.getElementById('closeResourcesBtn').addEventListener('click', () => {
+                hideModal(resourcesModal);
+            });
+
+            document.getElementById('closeSuccessBtn').addEventListener('click', () => {
+                hideModal(successModal);
+            });
+
+            // Form submissions
+            document.getElementById('emergencyForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                // TODO: Implement emergency contact form submission to backend
+                // Should send high-priority email notification to admin
+                console.log('Emergency form submitted');
+                hideModal(emergencyModal);
+                setTimeout(() => showModal(successModal), 300);
+            });
+
+            document.getElementById('stressAssessmentForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const results = calculateStressScore();
+                if (results) {
+                    // TODO: Save assessment results to database anonymously
+                    console.log('Stress assessment results:', results);
+                    displayStressResults(results);
+                    hideModal(stressModal);
+                    setTimeout(() => showModal(stressResultsModal), 300);
+                }
+            });
+
+            // Navigation between modals
+            document.getElementById('backToHomeBtn').addEventListener('click', () => {
+                hideModal(stressResultsModal);
+            });
+
+            document.getElementById('newChatBtn').addEventListener('click', () => {
+                hideModal(stressResultsModal);
+                // Clear chat messages
+                chatMessages.innerHTML = `
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-primary text-sm"></i>
+                        </div>
+                        <div class="bg-muted rounded-lg p-3 max-w-xs">
+                            <p class="text-muted-foreground text-sm">
+                                Halo! Selamat datang kembali di Ruang Tenang. Bagaimana perasaan Anda sekarang?
+                            </p>
+                        </div>
+                    </div>
+                `;
+                setTimeout(() => showModal(chatOverlay), 300);
+            });
+
+            document.getElementById('showResourcesBtn').addEventListener('click', () => {
+                hideModal(stressResultsModal);
+                setTimeout(() => showModal(resourcesModal), 300);
+            });
+
+            document.getElementById('backFromResourcesBtn').addEventListener('click', () => {
+                hideModal(resourcesModal);
+                setTimeout(() => showModal(stressResultsModal), 300);
+            });
+
+            document.getElementById('notNowBtn').addEventListener('click', () => {
+                document.getElementById('professionalHelpOffer').classList.add('hidden');
+            });
+
+            document.getElementById('cancelEmergencyBtn').addEventListener('click', () => {
+                hideModal(emergencyModal);
+            });
+
+            // Close modals when clicking outside
+            [chatOverlay, emergencyModal, stressModal, stressResultsModal, resourcesModal, successModal].forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        hideModal(modal);
+                    }
+                });
+            });
+
+            // TODO: Implement backend integration for:
+            // - AI chatbot responses (connect to OpenAI or similar)
+            // - Emergency contact form (email notifications)
+            // - Stress assessment data storage
+            // - User session management
+            // - Historical stress data retrieval
+
+            console.log('Ruang Tenang application initialized');
+        })();
+    </script>
+</body>
+</html>
