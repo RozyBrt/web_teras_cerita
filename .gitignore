@@ -1,7 +1,24 @@
-node_modules
-dist
-.DS_Store
-server/public
-vite.config.ts.*
-*.tar.gz
+# Kategori 1: Dependensi
+node_modules/
+
+# Kategori 2: Hasil Build
+dist/
+
+# Kategori 3: File Sensitif & Lingkungan Lokal
 .env
+.env.local
+*.env
+.local/
+
+# Kategori 4: File Sistem Operasi & Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Kategori 5: Log & Cache
+npm-debug.log
+yarn-error.log
+.vite/
+.cache/
